@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu API Practice</title>
+
+  <link rel="stylesheet" href="styles/css/style.css">
+  <link rel="stylesheet" href="styles/css/index.css">
+</head>
+<body>
+  <nav class="navbar">Menu API</nav>
+  <section class="result-container">
+    <div>
+      <label for="filter" class="filter-label">Filter By:</label>
+      <select name="filter">
+        <option>All</option>
+        <option>Breakfast</option>
+        <option>Lunch</option>
+        <option>Dinner</option>
+      </select>
+      <label for="sort-dropdown" class="filter-label">Sort by Price:</label>
+      <select name="sort-dropdown">
+        <option>High to low</option>
+        <option>Low to high</option>
+      </select>
+    </div>
+    <div class="result"></div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
