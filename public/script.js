@@ -3,11 +3,13 @@ const formAlert = document.querySelector('.form-alert')
 const result = document.querySelector('.result');
 var selectFilterFood = (document.querySelector('#filter-food')).value;
 var selectPriceSort = (document.querySelector('#price-sort')).value;
+var idSearch = document.getElementById('id-search').value;
 
 const fetchMenus = async() => {
   try {
     selectFilterFood = (document.querySelector('#filter-food')).value;
     selectPriceSort = (document.querySelector('#price-sort')).value;
+    idSearch = document.getElementById('id-search').value;
     const {data} = (await axios.get('/api/menus'))
 
     if(selectPriceSort == 'High to Low'){
@@ -22,8 +24,7 @@ const fetchMenus = async() => {
 
     console.log(data) 
     const menus = data.data.map((menu) => {
-      if(menu.category == selectFilterFood.toLowerCase() || selectFilterFood == "All"){
-        
+      if((menu.category == selectFilterFood.toLowerCase() || selectFilterFood == "All") && (menu.id == idSearch || idSearch <= 0 || !idSearch)){
         return `<div class="menu-item" id="menu-${menu.id}">
         <h3>${menu.title}</h3>
         <h5>${menu.desc}</h5>

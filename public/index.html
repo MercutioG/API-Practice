@@ -12,6 +12,9 @@
   <nav class="navbar">Menu</nav>
   <section class="result-container">
     <div>
+      <label for="id-search">ID: </label>
+      <input type="number" name="id-search" id="id-search" onchange="fetchMenus()">
+
       <label for="filter" id="filter-label">Filter By:</label>
       <select name="filter" id="filter-food" onchange="fetchMenus()">
         <option>All</option>
